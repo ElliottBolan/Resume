@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elliott Bolan - Resume</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 </head>
 
 <body>
     <div class="container">
-        <nav>
-            <div class="nav-content">
-                <a href="#about" class="nav-item">About</a>
-                <a href="#education" class="nav-item">Education</a>
-                <a href="#skills" class="nav-item">Skills</a>
-                <a href="#projects" class="nav-item">Projects</a>
-                <a href="#experience" class="nav-item">Experience</a>
-                <a href="#contact" class="nav-item">Contact</a>
-                <div class="nav-indicator"></div>
-            </div>
-        </nav>
-
-        <section id="about" class="panel active">
-            <div class="panel-content">
+        <main class="resume-main">
+            <section id="about">
                 <h1>Elliott Bolan</h1>
                 <p>Targeting a full-time software engineering internship position for summer 2025</p>
                 <ul>
@@ -33,85 +23,120 @@
                     <li><i class="fa fa-phone"></i> (817)-760-9535</li>
                     <li><i class="fa fa-map-marker-alt"></i> Dallas, Texas</li>
                 </ul>
-            </div>
-        </section>
+		<button id="theme-toggle">Switch to Dark Mode</button>
+            </section>
 
-        <section id="education" class="panel">
-            <div class="panel-content">
+            <section id="education">
                 <h2>Education</h2>
                 <h3>The University of Texas at Dallas</h3>
-                <p>Bachelor of Computer Science. [cite: 1] Richardson, TX [cite: 1, 2] Expected Graduation Dec 2025 [cite: 2]</p>
+                <p>Bachelor of Computer Science. Richardson, TX Expected Graduation Dec 2025</p>
                 <h4>Relevant Coursework:</h4>
-                <p>CS 3377 Sysms Prog UNIX And Other Envir, CS 3345 Data Structures & Algorm Anlys, CS 3305-Discrete Mathematics for Computing II, CS 3341 - Probability and Statistics in Computer Science and Software Engineering, CS 4341 Digital Logic & Computer Design, ECS 2390 Professional and Technical Communication [cite: 2]</p>
-            </div>
-        </section>
+                <p>CS 3377 Sysms Prog UNIX And Other Envir, CS 3345 Data Structures & Algorm Anlys, CS 3305-Discrete Mathematics for Computing II, CS 3341 - Probability and Statistics in Computer Science and Software Engineering, CS 4341 Digital Logic & Computer Design, ECS 2390 Professional and Technical Communication</p>
+            </section>
 
-        <section id="skills" class="panel">
-            <div class="panel-content">
+            <section id="skills">
                 <h2>Skills & Interests</h2>
                 <h4>Technical:</h4>
-                <p>Python, Java, JavaScript, SQL, C#, C++, C, x86, MIPS, HTML, CSS, React, Racket, Prolog [cite: 2]</p>
+                <p>
+                    <span class="skill" data-skill="Python">Python</span>,
+                    <span class="skill" data-skill="Java">Java</span>,
+                    <span class="skill" data-skill="JavaScript">JavaScript</span>,
+                    <span class="skill" data-skill="SQL">SQL</span>,
+                    <span class="skill" data-skill="C#">C#</span>,
+                    <span class="skill" data-skill="C++">C++</span>,
+                    <span class="skill" data-skill="C">C</span>,
+                    <span class="skill" data-skill="x86">x86</span>,
+                    <span class="skill" data-skill="MIPS">MIPS</span>,
+                    <span class="skill" data-skill="HTML">HTML</span>,
+                    <span class="skill" data-skill="CSS">CSS</span>,
+                    <span class="skill" data-skill="React">React</span>,
+                    <span class="skill" data-skill="Racket">Racket</span>,
+                    <span class="skill" data-skill="Prolog">Prolog</span>
+                </p>
                 <h4>Language:</h4>
-                <p>English (Native), Spanish (Limited Working Proficiency) [cite: 2]</p>
+                <p>English (Native), Spanish (Limited Working Proficiency)</p>
                 <h4>Interests:</h4>
-                <p>Artificial Intelligence, Machine Learning, Internet of Things (IoT), Solutions Architecture [cite: 2]</p>
-                 <h4>Other Skills:</h4>
-                <p>Microsoft Excel, Word, PowerPoint, Adobe Photoshop, After Effects, Premiere Pro, LaTeX, and more. [cite: 2]</p>
-            </div>
-        </section>
+                <p>Artificial Intelligence, Machine Learning, Internet of Things (IoT), Solutions Architecture</p>
+                <h4>Other Skills:</h4>
+                <p>Microsoft Excel, Word, PowerPoint, Adobe Photoshop, After Effects, Premiere Pro, LaTeX, and more.</p>
+            </section>
 
-        <section id="projects" class="panel">
-            <div class="panel-content">
-                <h2>Projects</h2>
-                <div class="project">
-                    <h3>Image Analysis & Classification Model Development <span class="project-lang">(Python)</span></h3>
+            <section id="projects">
+                <h2>Projects <span class="project-location">at <b>The University of Texas at Dallas</b></span></h2>
+                <div class="project" data-project="image-analysis">
+                    <h3 class="open-banner-link">Image Analysis & Classification Model Development <span class="project-lang">(Python)</span></h3>
                     <p class="project-date">Apr 2025</p>
-                    <p>- Accomplished automated visual content labeling by implementing scalable machine learning algorithms for image analysis, which led to the ability to process and categorize thousands of images per hour without human interaction. [cite: 3]</p>
-                    <p>- Constructed and evaluated machine learning pipelines for visual data, employing PyTorch to implement feature extraction and classification algorithms, and demonstrated model efficacy on the MNIST and CIFAR-10 datasets. [cite: 4]</p>
+                    <p>-   Accomplished automated visual content labeling by implementing scalable machine learning algorithms for image analysis, which led to the ability to process and categorize thousands of images per hour without human interaction.</p>
+                    <p>-   Constructed and evaluated machine learning pipelines for visual data, employing PyTorch to implement feature extraction and classification algorithms, and demonstrated model efficacy on the MNIST and CIFAR-10 datasets.</p>
                 </div>
-                <div class="project">
-                    <h3>Automated Strategic Decision-Making System <span class="project-lang">(Python)</span></h3>
+                <div class="project" data-project="strategic-decision">
+                    <h3 class="open-banner-link">Automated Strategic Decision-Making System <span class="project-lang">(Python)</span></h3>
                     <p class="project-date">Mar 2025</p>
-                    <p>- Developed a system capable of predicting optimal game moves by implementing recursive search algorithms and heuristic evaluation functions, which led to a significant improvement in Al gameplay performance. [cite: 5]</p>
-                    <p>- Achieved accurate evaluation of game states by implementing static analysis methods to assess positional advanta- ges, which led to the Al's ability to make informed decisions in complex game scenarios. [cite: 6]</p>
+                    <p>-   Developed a system capable of predicting optimal game moves by implementing recursive search algorithms and heuristic evaluation functions, which led to a significant improvement in Al gameplay performance.</p>
+                    <p>-   Achieved accurate evaluation of game states by implementing static analysis methods to assess positional advantages, which led to the Al's ability to make informed decisions in complex game scenarios.</p>
                 </div>
-                 <div class="project">
-                    <h3>Sorting Algorithm Runtime Analysis <span class="project-lang">(C++)</span></h3>
+                <div class="project" data-project="sorting-algorithm">
+                    <h3 class="open-banner-link">Sorting Algorithm Runtime Analysis <span class="project-lang">(C++)</span></h3>
                     <p class="project-date">Sep 2024</p>
-                    <p>- Sorted an unsorted list of 50k numbers in a text file multiple times using different sorting algorithms. [cite: 7]</p>
-                    <p>- Learned about the different scenarios in which to use insertion sort, quick sort, heap sort, or merge sort. [cite: 8]</p>
-                    <p>- Learned which sorting algorithms to never use on specific scenarios to avoid high execution times. [cite: 9]</p>
+                    <p>-   Sorted an unsorted list of 50k numbers in a text file multiple times using different sorting algorithms.</p>
+                    <p>-   Learned about the different scenarios in which to use insertion sort, quick sort, heap sort, or merge sort.</p>
+                    <p>-   Learned which sorting algorithms to never use on specific scenarios to avoid high execution times.</p>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="experience" class="panel">
-            <div class="panel-content">
+            <section id="experience">
                 <h2>Work Experience</h2>
                 <div class="experience-item">
                     <h3>North Texas Home Exteriors - Project Coordinator</h3>
                     <p class="experience-date">May 2022 - Oct 2022, North Richland Hills, TX</p>
-                    <p>- Determined the tools and materials needed for multiple projects and reported them to the project manager. [cite: 10]</p>
-                    <p>- Picked up and transported the job materials from company storage or material providers to the job sites. [cite: 11]</p>
-                    <p>- Supervised job progress and participated in several different types of construction work. [cite: 12]</p>
-                    <p>- Helped organize jobs, worked on the exteriors of customers homes, and cleaned up after job completion. [cite: 13]</p>
+                    <p>-   Determined the tools and materials needed for multiple projects and reported them to the project manager.</p>
+                    <p>-   Picked up and transported the job materials from company storage or material providers to the job sites.</p>
+                    <p>-   Supervised job progress and participated in several different types of construction work.</p>
+                    <p>-   Helped organize jobs, worked on the exteriors of customers homes, and cleaned up after job completion.</p>
                 </div>
-            </div>
-        </section>
+            </section>
 
-         <section id="contact" class="panel">
-            <div class="panel-content">
+            <section id="contact">
                 <h2>Volunteering</h2>
                 <div class="experience-item">
                     <h3>Big Pig Cancer Foundation 501(c)(3)</h3>
                     <p class="experience-date">Dallas, TX</p>
-                    <p>- Maintained cleanliness of public parks and bike trails by removing litter and ensuring a welcoming environment. [cite: 14]</p>
-                    <p>- Performed groundskeeping on public bike trails to ensure the safety of cyclists and ability to use the trails. [cite: 15]</p>
+                    <p>-   Maintained cleanliness of public parks and bike trails by removing litter and ensuring a welcoming environment.</p>
+                    <p>-   Performed groundskeeping on public bike trails to ensure the safety of cyclists and ability to use the trails.</p>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
+        <aside class="image-banner" data-banner="image-analysis">
+            <button class="close-banner-btn">&times;</button>
+            <h4>Image Analysis Project Images</h4>
+            <div class="image-slider image-slider-analysis">
+                <img src="image1.jpg" alt="Image Analysis 1">
+                <img src="image2.jpg" alt="Image Analysis 2">
+                </div>
+        </aside>
+
+        <aside class="image-banner" data-banner="strategic-decision">
+            <button class="close-banner-btn">&times;</button>
+            <h4>Strategic Decision Project Images</h4>
+            <div class="image-slider image-slider-strategic">
+                <img src="image3.jpg" alt="Strategic Decision 1">
+                <img src="image4.jpg" alt="Strategic Decision 2">
+                </div>
+        </aside>
+
+        <aside class="image-banner" data-banner="sorting-algorithm">
+            <button class="close-banner-btn">&times;</button>
+            <h4>Sorting Algorithm Project Images</h4>
+            <div class="image-slider image-slider-sorting">
+                <img src="image5.jpg" alt="Sorting Algorithm 1">
+                <img src="image6.jpg" alt="Sorting Algorithm 2">
+                </div>
+        </aside>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="script.js"></script>
 </body>
 

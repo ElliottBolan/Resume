@@ -1,43 +1,73 @@
-const navItems = document.querySelectorAll('.nav-item');
-const navIndicator = document.querySelector('.nav-indicator');
-const panels = document.querySelectorAll('.panel');
+$(document).ready(function () {
+    const $projects = $(".project");
+    const $skills = $(".skill");
+    const $banners = $(".image-banner");
+    const $body = $("body");
+    const $themeToggle = $("#theme-toggle");
 
-function setActive(element, index) {
-    navItems.forEach(item => item.classList.remove('active'));
-    element.classList.add('active');
-
-    const navRect = document.querySelector('.nav-content').getBoundingClientRect();
-    const itemRect = element.getBoundingClientRect();
-    const left = itemRect.left - navRect.left;
-    const width = itemRect.width;
-
-    navIndicator.style.left = `${left}px`;
-    navIndicator.style.width = `${width}px`;
-
-    panels.forEach(panel => panel.classList.remove('active'));
-    panels[index].classList.add('active');
-}
-
-navItems.forEach((item, index) => {
-    item.addEventListener('click', (e) => {
-        e.preventDefault();
-        setActive(item, index);
-        window.history.pushState(null, null, item.getAttribute('href'));
+    // Initialize Slick Sliders (same as before)
+    $(".image-slider-analysis").slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
     });
-});
 
-// Set initial active state (default to 'About')
-setActive(navItems[0], 0);
+    $(".image-slider-strategic").slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+    });
 
-// Handle back/forward button
-window.addEventListener('popstate', () => {
-    const hash = window.location.hash;
-    if (hash) {
-        const index = Array.from(navItems).findIndex(item => item.getAttribute('href') === hash);
-        if (index !== -1) {
-            setActive(navItems[index], index);
+    $(".image-slider-sorting").slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+    });
+
+    // Function to handle opening the correct banner and highlighting skills (same as before)
+    function openBannerAndHighlightSkills(project) {
+        $banners.removeClass("open");
+        $skills.removeClass("active");
+
+        $(`[data-banner="${project}"]`).addClass("open");
+
+        if (project === "image-analysis") {
+            $(`[data-skill="Python"]`).addClass("active");
+            //   $(`[data-skill="PyTorch"]`).addClass("active");
+        } else if (project === "strategic-decision") {
+            $(`[data-skill="Python"]`).addClass("active");
+        } else if (project === "sorting-algorithm") {
+            $(`[data-skill="C++"]`).addClass("active");
         }
-    } else {
-        setActive(navItems[0], 0);
     }
+
+    // Project title click handlers (same as before)
+    $(".open-banner-link").click(function () {
+        const project = $(this).parent().data("project");
+        openBannerAndHighlightSkills(project);
+    });
+
+    $(".close-banner-btn").click(function () {
+        $banners.removeClass("open");
+        $skills.removeClass("active");
+    });
+
+    // Theme Toggle
+    $themeToggle.click(function () {
+        $body.toggleClass("dark-theme");
+        if ($body.hasClass("dark-theme")) {
+            $(this).text("Switch to Light Mode");
+        } else {
+            $(this).text("Switch to Dark Mode");
+        }
+    });
 });
